@@ -1,0 +1,116 @@
+.body {
+    margin-top: 20px;
+    height: 1040px;
+}
+
+.tb {
+    width: 1200px;
+    height: 1000px;
+    margin: auto;
+    border: 1px black solid;
+    background-color: rgb(173, 222, 222);
+    background-image: linear-gradient(to left bottom, rgb(40, 51, 40), rgb(61, 160, 177));
+    /* background: url(photo/IMG20230312084531.jpg) no-repeat; */
+}
+
+body {
+    position: relative;
+    user-select: none;
+}
+
+.cte {
+    height: 200px;
+    width: 200px;
+    border: 10px solid rgb(33, 136, 138);
+    float: left;
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-top: 75px;
+}
+
+.cte {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+    line-height: 200px;
+}
+
+.cte:hover {
+    color: aqua;
+    background-color: rgb(128, 84, 84);
+    border: 5px rgb(218, 116, 116) solid;
+    box-shadow: 0px 0px 10px 10px rgb(173, 85, 85);
+}
+
+#lelist {
+    float: left;
+    height: 240px;
+    width: 150px;
+    background-color: aqua;
+    margin-left: 10px;
+}
+
+#adc>li,
+#adc>a {
+    display: block;
+    height: 40px;
+    margin-left: 0;
+    background-color: rgb(81, 95, 95);
+    color: black;
+    width: 150px;
+    border: rgb(16, 120, 185) 1px solid;
+    text-align: center;
+    font-size: 15px;
+}
+
+#adc>span {
+    display: block;
+    height: 40px;
+    margin-left: 0;
+    background-color: rgb(141, 137, 86);
+    color: black;
+    width: 150px;
+    border: rgb(0, 8, 255) 1px solid;
+    text-align: center;
+    font-size: 18px;
+}
+
+#adc>li:hover,
+#adc>a:hover {
+    background-color: black;
+    color: aqua;
+    display: block;
+}
+
+#adt2 {
+    float: left;
+    height: 300px;
+    width: 200px;
+    background: url() no-repeat;
+    background-color: black;
+    border: red 1px solid;
+    margin-top: 260px;
+    margin-left: -150px;
+    color: aquamarine;
+    font-size: 10px;
+    text-align: center;
+    line-height: 200px;
+    position: relative;
+}
+
+#remove {
+    color: white;
+    width: 40px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom: solid 1px red;
+    border-left: solid 1px red;
+}
+
+body {
+    background-color: rgb(89, 88, 84);
+}

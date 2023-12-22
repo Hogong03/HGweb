@@ -1,0 +1,92 @@
+.head {
+    background-color: gray;
+    height: 50px;
+    color: red;
+    font-size: xx-large;
+    padding-left: 10px;
+    text-align: center;
+    /* background-image: linear-gradient(to right, rgb(177, 141, 141), gray); */
+    background-color: rgb(177, 141, 141);
+}
+
+#xuexiwang:hover {
+    color: rgb(237, 140, 140);
+}
+
+#xuexiwang {
+    color: rgb(68, 101, 101);
+}
+
+.head2,
+.head2>a {
+    color: rgb(204, 60, 60);
+    font-size: 20px;
+}
+
+.head2 {
+    margin-bottom: -30px;
+}
+
+#sbao {
+    display: inline-block;
+    height: 5px;
+    font-size: 5px;
+    width: 5px;
+    vertical-align: top;
+}
+
+.body>input {
+    vertical-align: middle;
+}
+
+.zhuc1,
+.zhuc2 {
+    float: right;
+    height: 20px;
+    width: 50px;
+    background-color: aliceblue;
+    color: gray;
+    font-size: 5px;
+    margin-top: 0px;
+    border: 1px gray solid;
+}
+
+.zhuc:hover {
+    color: rgb(221, 137, 137);
+}
+
+#bj {
+    float: right;
+    width: 190px;
+    height: 30px;
+    border: 1px blue solid;
+    line-height: 30px;
+}
+
+#bj>ol>li {
+    float: left;
+    display: block;
+    height: 20px;
+    width: 40px;
+    font-style: normal;
+    text-align: center;
+    line-height: 20px;
+}
+
+#bj>ol>li:nth-child(1) {
+    color: rgb(239, 219, 219);
+    width: 60px;
+}
+
+#bj>ol>li:nth-child(2) {
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+#bj>ol>li:nth-child(3) {
+    color: white;
+}
+
+#bj>ol>li:nth-child(4) {
+    color: green;
+}

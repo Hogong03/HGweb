@@ -1,0 +1,371 @@
+<!-- HG的实训作业，制作于2023-6-12~6-15 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="position.CSS">
+    <link rel="shortcut icon" href="photo/bitbug_favicon (4).ico" />
+    <title>南工寻路系统</title>
+    <script>
+        window.addEventListener('load', function () {
+            alert('欢迎来到南工寻路系统\n' + '本网站是以JS技术为基础,以实现南工导游咨询,具体解释请点击explain。');
+        })
+    </script>
+
+    <style>
+        #body {
+            background: url(photo/new1.jpg) no-repeat;
+            height: 381px;
+            width: 1000px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        body {
+            background-color: gray;
+        }
+
+        .nav {
+            float: left;
+            height: 400px;
+            width: 100px;
+            margin-top: -450px;
+            margin-left: -40px;
+        }
+
+        .nav>ul>li {
+            list-style: none;
+            width: 100px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            border: 1px red solid;
+            text-align: center;
+        }
+
+        #body>a:hover {
+            border: 1px solid black;
+        }
+
+        #body>a {
+            display: block;
+            height: 20px;
+            width: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            line-height: 20px;
+            font-size: 2px;
+            color: aqua;
+        }
+
+        .li1 {
+            display: block;
+            border: 1px red solid;
+            width: 200px;
+            height: 200px;
+            color: gray;
+            line-height: 20px;
+            font-size: 20px;
+            float: left;
+            margin-left: -50px;
+        }
+
+        #head2,
+        #head2>a {
+            color: rgb(204, 60, 60);
+            font-size: 20px;
+        }
+
+        #head2 {
+            margin-bottom: -30px;
+        }
+
+        #sbao {
+            display: inline-block;
+            height: 5px;
+            font-size: 5px;
+            width: 5px;
+            vertical-align: top;
+        }
+
+        .zhizuoren:hover {
+            background-color: black;
+            color: aqua;
+        }
+
+        .zhizuoren {
+            width: 100px;
+            height: 20px;
+            line-height: 20px;
+            border: 1px red solid;
+            text-align: center;
+            color: white;
+            background-color: rgb(68, 65, 65);
+            right: 0px;
+            right: 8px;
+            top: 55px;
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head2"><a id="HG" style="text-decoration: none;" href="http://redmastre.3vkj.club/">HG
+            <div id="sbao">&reg;</div>
+        </a>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var HG = document.getElementById('HG');
+            HG.onmouseover = function () {
+                jieshao.innerText = '点击以前往HG网站';
+                console.log(1);
+            }
+            HG.onmouseout = function () {
+                jieshao.innerText = '解释框';
+            }
+        })
+    </script>
+    <div class="head"
+        style="font-size: 20px; height: 50px; background-color: black; color: rgb(78, 83, 184); line-height: 50px; text-align: center;">
+        南工寻路系统
+    </div>
+    <div id="explain"
+        style="cursor:pointer; text-align: center; float: left;line-height: 20px; font-size: 12px;height: 20px;width: 50px; border: 1px solid red; color: rgb(201, 179, 39); background-color: antiquewhite;">
+        explain
+    </div>
+    <script>
+        var exp = document.getElementById('explain');
+        exp.onclick = function () {
+            alert(' 本网站是以JS技术为基础,以实现南工导游咨询,主要由三个板块组成：\n' + '  1.您可以点击最左边的任意一栏，下面会显示对应栏的具体信息。\n' + '  2.中间为南工地图,您可以点击上面的点以在右边进行操作。\n' + '  3.最右边为寻路系统。\n' + '  如果有任何更好的意见请联系制作人ZHG。');
+        }
+    </script>
+    <div id="body">
+        <a href="JavaScript:;" title='大门'>1</a>
+        <a href="JavaScript:;" title='电子信息楼'>2</a>
+        <a href="JavaScript:;" title='南教学楼'>3</a>
+        <a href="JavaScript:;" title='北教学楼'>4</a>
+        <a href="JavaScript:;" title='图书馆'>5</a>
+        <a href="JavaScript:;" title='艺术楼'>6</a>
+        <a href="JavaScript:;" title='宿舍'>7</a>
+        <a href="JavaScript:;" title='行政楼'>8</a>
+        <a href="JavaScript:;" title='操场'>9</a>
+        <a href="JavaScript:;" title='体育馆'>10</a>
+    </div>
+    <div class="nav">
+        <ul>
+            <li>1大门</li>
+            <li>2电子信息楼</li>
+            <li>3南教学楼</li>
+            <li>4北教学楼</li>
+            <li>5图书馆</li>
+            <li>6艺术楼</li>
+            <li>7宿舍</li>
+            <li>8行政楼</li>
+            <li>9操场</li>
+            <li>10体育馆</li>
+        </ul>
+    </div>
+    <div id="jieshao"
+        style="text-align: center; display: block; width: 800px; height: 200px; border: red 1px solid; margin:10px auto;">
+        &nbsp;&nbsp;解释框
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var lis = document.querySelectorAll('li');
+            var jieshao = document.getElementById('jieshao');
+            lis[0].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学校的牌面。";
+            }
+            lis[1].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;电子信息楼设有计算机基础、计算机工程、电子工程、通信工程、信息管理等5个教研室和计算机基础、电子工程、通信工程、计算机工程等4个实验中心，实验教学用房7600余平方米，固定资产3300多万元。计算机基础实验中心和电子工程实验中心分别评为江西省高校实验教学示范中心。";
+            }
+            lis[2].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学校大门的东北，图书馆的东南边即时南教学楼。";
+            }
+            lis[3].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学校大门的西北，图书馆的西南边即时南教学楼。";
+            }
+            lis[4].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;南昌工程学院图书馆是学校的文献信息中心，是为教学、科研服务的重要情报信息部门，也是培养师生收集、整理、利用信息能力及习惯的教学和学术性机构。其特色鲜明、管理科学、文献资料齐全、服务优良、环境优美，能较大限度满足读者需求，能为教学科研提供切实有效的文献信息，体现了教育性、学术性和专业性的特点。";
+            }
+            lis[5].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学校艺术生和老师活动的地方。";
+            }
+            lis[6].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学生们休息的地方。";
+            }
+            lis[7].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学校领导办公的地方。";
+            }
+            lis[8].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;很大的操场。";
+            }
+            lis[9].onclick = function () {
+                jieshao.innerHTML = "&nbsp;&nbsp;学生们进行体育活动的地方。";
+            }
+        })
+    </script>
+    <div class="cx" style="width: 200px;height: 600px;border: 1px red solid;float: right; margin-top: -600px;">
+        <span
+            style="display: block;width: 200px; color: white;height: 20px;line-height: 20px; text-align: center; background-color: black;">寻路系统</span>
+        <div style="display: block;width: 200px; color: white;line-height: 20px; text-align: center;
+            background-color: black;">
+            输入想要查找的路径（数字），或者点击两个地点
+        </div>
+        <div>
+            <div id="qidian">请输入您想查询的起点</div>
+            <input type="text" id="qd" value="起点">
+            <div id="zhongdian">请输入终点</div>
+            <input type="text" id="zd" value="终点">
+            <button>刷新</button>
+            <button>查询</button>
+            <ul id="ul1"></ul>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            var as = document.querySelectorAll('a');
+            var qidian = document.getElementById('qidian');
+            var zhongdian = document.getElementById('zhongdian');
+            var qd = document.getElementById('qd');
+            var zd = document.getElementById('zd');
+            var but = document.querySelectorAll('button');
+
+            for (let i_number = 1; i_number <= 10; i_number++) {
+                as[i_number].onclick = function () {
+                    if (qd.value == '起点') {
+                        qd.value = i_number;
+                    } else if (zd.value == '终点') {
+                        zd.value = i_number;
+                    }
+                }
+            }
+
+            var Arr2 = [
+                [0, 240, Infinity, 360, Infinity, Infinity, Infinity, Infinity, Infinity, Infinity],
+                [240, 0, 160, Infinity, Infinity, Infinity, Infinity, Infinity, Infinity, Infinity],
+                [Infinity, 160, 0, Infinity, 500, Infinity, Infinity, Infinity, Infinity, Infinity],
+                [360, Infinity, Infinity, 0, 240, Infinity, Infinity, Infinity, Infinity, Infinity],
+                [Infinity, Infinity, 200, 240, 0, 240, Infinity, 160, Infinity, Infinity],
+                [Infinity, Infinity, Infinity, Infinity, 240, 0, 500, Infinity, Infinity, Infinity],
+                [Infinity, Infinity, Infinity, Infinity, Infinity, 500, 0, Infinity, 500, Infinity],
+                [Infinity, Infinity, Infinity, Infinity, 160, Infinity, Infinity, 0, 300, Infinity],
+                [Infinity, Infinity, Infinity, Infinity, Infinity, Infinity, 500, 300, 0, 200],
+                [Infinity, Infinity, Infinity, Infinity, Infinity, Infinity, Infinity, Infinity, 200,],
+            ];
+
+            var numVertexes = 10,
+                numEdges = 11;
+
+            function MGraph() {
+                this.vexs = [];
+                this.arc = [];
+                this.numVertexes = null;
+                this.numEdges = null;
+            }
+            var G = new MGraph();
+
+            function createMGraph() {
+                G.numVertexes = numVertexes;
+                G.numEdges = numEdges;
+
+                for (var i = 0; i < G.numVertexes; i++) {
+                    G.vexs[i] = 'V' + i;
+                }
+
+                for (var i = 0; i < G.numVertexes; i++) {
+                    G.arc[i] = [];
+                    for (j = 0; j < G.numVertexes; j++) {
+                        G.arc[i][j] = Arr2[i][j];
+                    }
+                }
+            }
+
+            var Pathmatirx = [];
+            var ShortPathTable = [];
+
+            function Floyd() {
+
+                var w, k;
+                for (var v = 0; v < G.numVertexes; ++v) {
+                    Pathmatirx[v] = [];
+                    ShortPathTable[v] = [];
+                    for (var w = 0; w < G.numVertexes; ++w) {
+                        ShortPathTable[v][w] = G.arc[v][w];
+                        Pathmatirx[v][w] = w;
+                    }
+                }
+
+                for (var k = 0; k < G.numVertexes; ++k) {
+                    for (var v = 0; v < G.numVertexes; ++v) {
+                        for (var w = 0; w < G.numVertexes; ++w) {
+                            if (ShortPathTable[v][w] > (ShortPathTable[v][k] + ShortPathTable[k][w])) {
+                                ShortPathTable[v][w] = ShortPathTable[v][k] + ShortPathTable[k][w];
+                                Pathmatirx[v][w] = Pathmatirx[v][k];
+                            }
+                        }
+                    }
+                }
+            }
+
+            var arri = [];
+            for (var i = 0; i < 11; i++) {
+                arri[i] = [];
+                for (var j = 0; j < 11; j++) {
+                    arri[i][j] = 0;
+                }
+            }
+
+            function PrintAll() {
+                for (var v = 0; v < G.numVertexes; ++v) {
+                    for (var w = v + 1; w < G.numVertexes; w++) {
+                        var str1 = '点' + (v + 1) + ' ' + '到' + ' ' + '点' + (w + 1) + ' 距离：' + ShortPathTable[v][w] + '米';
+                        k = Pathmatirx[v][w];
+                        var str2 = '路径：' + (v + 1);
+                        var str3 = '';
+                        while (k != w) {
+                            str3 = str3 + '-' + (k + 1);
+                            k = Pathmatirx[k][w];
+                        }
+                        var str4 = '-' + (w + 1);
+                        arri[v][w] = str1 + str2 + str3 + str4 + '。';
+                    }
+                }
+            }
+
+            createMGraph();
+            Floyd();
+            PrintAll();
+
+            but[0].onclick = function () {
+                qd.value = '起点';
+                zd.value = '终点';
+                jieshao.innerText = '解释框';
+            }
+            but[1].onclick = function () {
+                if (qd.value == zd.value) {
+                    alert('请不要输入同一地点。')
+                    qd.value = '起点';
+                    zd.value = '终点';
+                } else {
+                    var i = +qd.value;
+                    var j = +zd.value;
+                    if (i < j) {
+                        jieshao.innerText = arri[i - 1][j - 1];
+                    } else {
+                        jieshao.innerText = arri[j - 1][i - 1];
+                    }
+                }
+            }
+        })
+    </script>
+    <div class="zhizuoren">
+        制作人:ZHG
+    </div>
+</body>
+
+</html>

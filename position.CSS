@@ -1,0 +1,59 @@
+#body>a:nth-child(1) {
+    position: absolute;
+    left: 260px;
+    top: 270px;
+}
+
+#body>a:nth-child(2) {
+    position: absolute;
+    left: 500px;
+    top: 240px;
+}
+
+#body>a:nth-child(3) {
+    position: absolute;
+    left: 650px;
+    top: 180px;
+}
+
+#body>a:nth-child(4) {
+    position: absolute;
+    left: 405px;
+    top: 122px;
+}
+
+#body>a:nth-child(5) {
+    position: absolute;
+    left: 600px;
+    top: 100px;
+}
+
+#body>a:nth-child(6) {
+    position: absolute;
+    left: 580px;
+    top: 60px;
+}
+
+#body>a:nth-child(7) {
+    position: absolute;
+    left: 560px;
+    top: 40px;
+}
+
+#body>a:nth-child(8) {
+    position: absolute;
+    left: 780px;
+    top: 125px;
+}
+
+#body>a:nth-child(9) {
+    position: absolute;
+    left: 750px;
+    top: 75px;
+}
+
+#body>a:nth-child(10) {
+    position: absolute;
+    left: 850px;
+    top: 75px;
+}

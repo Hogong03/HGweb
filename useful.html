@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Document</title>
+    <style>
+        a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            height: 30px;
+            width: 300px;
+            background-color: rgb(154, 48, 48);
+            line-height: 30px;
+            border: black solid 1px;
+            text-align: center;
+        }
+
+        a:hover {
+            color: aqua;
+            background-color: orange;
+        }
+
+        span {
+            text-align: center;
+            color: antiquewhite;
+            background-color: blueviolet;
+            width: 300px;
+            height: 32px;
+            line-height: 32px;
+            margin: 0 auto;
+            display: block;
+            border: 1px red solid;
+        }
+
+        body {
+            background-color: gray;
+            margin: 0 auto;
+            width: 100%;
+            height: 100%;
+        }
+
+        .head {
+            color: antiquewhite;
+            width: 300px;
+            line-height: 32px;
+            margin: 0 auto;
+        }
+
+        .jieshikuang {
+            width: 200px;
+            height: 320px;
+            float: left;
+            border: red solid 1px;
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        .jieshao {
+            width: 100%;
+            height: 6.75%;
+            border: 1px black solid;
+            background-color: aquamarine;
+            font-size: 16px;
+            text-align: center;
+            line-height: 20px;
+        }
+
+        #jieshi {
+            width: 100%;
+            height: 93.25%;
+            border: 1px blue solid;
+            background-color: aqua;
+            color: black;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jieshikuang">
+        <div class="jieshao">网站介绍</div>
+        <div id="jieshi"></div>
+    </div>
+    <div class="head">
+        <span>有用的网站</span>
+        <script>
+            const jieshi = document.querySelector('#jieshi')
+            const sp = document.querySelector('.head')
+            const huanyin = "欢迎来到HG网站"
+            jieshi.innerHTML = huanyin
+            const webs = [
+                { jieshi: "", name: "Web服务器", href: "http://free.3v.do/" },
+                { jieshi: "", name: "W3C网站", href: "https://www.w3school.com.cn/" },
+                { jieshi: "", name: "ico图生成器", href: "https://www.bitbug.net" },
+                { jieshi: "", name: "HG学习网", href: "http://redmastre.3vkj.club" },
+                { jieshi: "", name: "南工官网", href: "http://www.nit.edu.cn/" },
+                { jieshi: "", name: "CSDN官网", href: "https://www.csdn.net/" },
+                { jieshi: "", name: "GitHub官网", href: "https://github.com/ftlabs/fastclick" },
+                { jieshi: "", name: "swiper", href: "http://www.swiper.com.cn" },
+                { jieshi: "", name: "Vue官网", href: "https://vuejs.org/" },
+                { jieshi: "", name: "uni-app官网", href: "https://uniapp.dcloud.net.cn/" },
+                { jieshi: "", name: "更多网站敬请期待", href: "JavaScript:;" },
+            ];
+            for (let i = 0; i < webs.length; i++) {
+                let iee = document.createElement('a')
+                iee.innerHTML = webs[i].name
+                iee.href = webs[i].href
+                sp.appendChild(iee)
+                iee.addEventListener('mouseover', function () {
+                    jieshi.innerHTML = webs[i].jieshi
+                })
+                iee.addEventListener('mouseleave', function () {
+                    jieshi.innerHTML = huanyin
+                })
+            }
+        </script>
+</body>
+
+</html>

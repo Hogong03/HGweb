@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>论坛页面</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    header nav li:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    header nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .categories {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .categories h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .categories ul {
+        list-style: none;
+    }
+
+    .categories li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .categories a {
+        color: #333;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .categories a:hover {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #333;
+    }
+
+    .posts {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .posts h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .add-post-form {
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .input-group label {
+        display: block;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    .input-group textarea {
+        height: 150px;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: #fff;
+        color: #333;
+        border: 1px solid #333;
+    }
+
+    .posts ul {
+        list-style: none;
+    }
+
+    .posts li:not(:last-child) {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 20px;
+    }
+
+    .posts a {
+        color: #333;
+        text-decoration: none;
+        display: flex;
+    }
+
+    .posts h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .posts p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        line-height: 1.5;
+        flex: 1;
+    }
+
+    .posts .info {
+        color: #888;
+        font-size: 14px;
+        margin-top: auto;
+        margin-left: 20px;
+    }
+
+    footer {
+        background-color: #ccc;
+        color: #333;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>论坛</h1>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">最新帖子</a></li>
+                <li><a href="#">我的帖子</a></li>
+                <li><a href="#">登出</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="categories">
+            <h2>分类</h2>
+            <ul class="categories-list">
+                <li><a href="#">编程</a></li>
+                <li><a href="#">设计</a></li>
+                <li><a href="#">杂谈</a></li>
+            </ul>
+        </section>
+        <section class="posts">
+            <h2>帖子</h2>
+            <form class="add-post-form">
+                <div class="input-group">
+                    <label for="post-title">标题</label>
+                    <input type="text" id="post-title" name="postTitle">
+                </div>
+                <div class="input-group">
+                    <label for="post-content">内容</label>
+                    <textarea id="post-content" name="postContent"></textarea>
+                </div>
+                <button type="submit" class="btn">添加帖子</button>
+            </form>
+            <ul class="posts-list">
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>© 2023 论坛. All rights reserved.</p>
+    </footer>
+    <script src="app.js"></script>
+    <script>
+        const categoriesList = document.querySelector(".categories-list");
+        const postsList = document.querySelector(".posts-list");
+        const addPostForm = document.querySelector(".add-post-form");
+
+        // 分类数据
+        const categories = [
+            { id: 1, name: "编程" },
+            { id: 2, name: "设计" },
+            { id: 3, name: "杂谈" }
+        ];
+
+        // 帖子数据
+        const posts = [
+            { id: 1, title: "如何学习JavaScript？", content: "最近对JavaScript很感兴趣，但不知道该如何学习，求指导。", author: "ZHG", time: "2023-06-15" },
+            { id: 2, title: "新的UI设计趋势", content: "最近看到了一些新的UI设计趋势，感觉很不错，分享一下。", author: "Julien", time: "2023-06-14" }
+        ];
+
+        // 渲染分类列表
+        function renderCategories() {
+            categories.forEach(category => {
+                const li = document.createElement("li");
+                const link = document.createElement("a");
+                link.href = "#";
+                link.textContent = category.name;
+                li.appendChild(link);
+                categoriesList.appendChild(li);
+            });
+        }
+        renderCategories();
+
+        // 渲染帖子列表
+        function renderPosts() {
+            postsList.innerHTML = "";
+            posts.forEach(post => {
+                const li = document.createElement("li");
+                const link = document.createElement("a");
+                link.href = "#";
+                const h3 = document.createElement("h3");
+                h3.textContent = post.title;
+                const p = document.createElement("p");
+                p.textContent = post.content;
+                const info = document.createElement("span");
+                info.classList.add("info");
+                info.textContent = `作者：${post.author}，时间：${post.time}`;
+                link.appendChild(h3);
+                link.appendChild(p);
+                link.appendChild(info);
+                li.appendChild(link);
+                postsList.appendChild(li);
+            });
+        }
+
+        // 添加帖子
+        addPostForm.addEventListener("submit", e => {
+            e.preventDefault();
+            const title = document.querySelector("[name=postTitle]").value;
+            const content = document.querySelector("[name=postContent]").value;
+            if (title.trim() && content.trim()) {
+                const newPost = {
+                    id: posts.length + 1,
+                    title: title.trim(),
+                    content: content.trim(),
+                    author: "游客",
+                    time: new Date().toISOString().slice(0, 10)
+                };
+                posts.unshift(newPost);
+                addPostForm.reset();
+                renderPosts();
+            }
+        });
+
+        // 渲染初始的帖子列表
+        renderPosts();
+    </script>
+</body>
+
+</html>

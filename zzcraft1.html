@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>Document</title>
+</head>
+<style>
+    #ul>li {
+        border: 1px red solid;
+        height: 20px;
+        width: 20%;
+    }
+
+    #ul>li:nth-child(n+2) {
+        display: none;
+    }
+
+    #li {
+        display: none;
+        height: 60px;
+        width: 200px;
+        background-color: black;
+    }
+</style>
+
+<body>
+    <ul id="ul">
+        <li>背景颜色</li>
+        <div id="li">
+            <li>红色</li>
+            <li>灰色</li>
+            <li>粉色</li>
+        </div>
+    </ul>
+    <script>
+        var lis = document.querySelectorAll('li');
+        var div_li = document.getElementById('li');
+        lis[0].addEventListener('mouseover', function () {
+            div_li.style.display = 'block';
+            div_li.addEventListener('mouseleave', function () {
+                div_li.style.display = 'none';
+            })
+        })
+    </script>
+</body>
+
+</html>
