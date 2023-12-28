@@ -1,3 +1,7 @@
+#body>a {
+    border: 1px red solid;
+}
+
 #body>a:nth-child(1) {
     position: absolute;
     left: 260px;
